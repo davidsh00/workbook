@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: nazanin;
+  src: url(B-NAZANIN.TTF);
+}
+html {
+  font-family: nazanin;
+  font-size: 16px;
+}
+/* .wrapper> *::after {
+  content: "";
+  display: block;
+  border-top: 1px dotted black;
+  margin-top: 15px;
+  margin-bottom: 15px;
+} */
+table{
+    table-layout: fixed;
+    width: 100%;
+}
+.workbook{
+    break-after: always;
+}
+@layer components {
+
+  .workbook {
+      @apply  overflow-hidden h-[145mm]  w-[210mm] m-auto
+  }
+  table {
+      
+    direction: rtl;
+    @apply w-full  text-center ;
+  }
+  table :where(td, tr, th) {
+    @apply border border-black p-1  overflow-hidden;
+  }
+  table thead tr:not(:nth-child(1)) td:nth-child(even) {
+    @apply font-bold bg-gray-100;
+  }
+  table.table-detail {
+    @apply text-base h-[10mm] whitespace-nowrap;
+  }
+  table thead tr:nth-child(1) td:nth-child(1) {
+    @apply text-[2rem] bg-gray-100;
+  }
+  table thead tr:nth-child(1) td:nth-child(2) {
+    @apply w-[30mm] h-[41mm];
+  }
+  table.table-score {
+    @apply text-sm;
+  }
+  .table-score tr th {
+    @apply bg-gray-300 ;
+  }
+  .table-score tfoot tr:nth-child(3) td:nth-child(4) {
+    @apply bg-gray-300;
+  }
+  .table-score tr:nth-child(1) th:nth-child(2),
+  .table-score th:nth-child(9) {
+    @apply w-[150px];
+  }
+  .table-score tr:nth-child(1) th:nth-child(4) {
+    @apply w-[100px]
+  }
+  .table-score tr:nth-child(1) th:nth-child(8){
+      @apply  w-[80px]
+  }
+}
