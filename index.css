@@ -9,24 +9,30 @@ html {
   font-family: nazanin;
   font-size: 16px;
 }
-/* .wrapper> *::after {
-  content: "";
-  display: block;
-  border-top: 1px dotted black;
-  margin-top: 15px;
-  margin-bottom: 15px;
-} */
+
 table{
     table-layout: fixed;
     width: 100%;
 }
+@page{
+  margin:0
+}
 .workbook{
     break-after: always;
+}
+@media screen {
+
 }
 @layer components {
 
   .workbook {
-      @apply  overflow-hidden h-[145mm]  w-[210mm] m-auto
+      @apply  overflow-hidden   w-[290mm] m-auto h-[210mm] flex justify-center items-start
+  }
+  .table-detail{
+    @apply h-[30%]
+  }
+  .table-score{
+    @apply h-[70%]
   }
   table {
       
@@ -34,19 +40,20 @@ table{
     @apply w-full  text-center ;
   }
   table :where(td, tr, th) {
-    @apply border border-black p-1  overflow-hidden;
+    @apply border border-black  overflow-hidden;
   }
   table thead tr:not(:nth-child(1)) td:nth-child(even) {
     @apply font-bold bg-gray-100;
   }
   table.table-detail {
-    @apply text-base h-[10mm] whitespace-nowrap;
+    @apply text-base  whitespace-nowrap;
   }
+
   table thead tr:nth-child(1) td:nth-child(1) {
-    @apply text-[2rem] bg-gray-100;
+    @apply text-[1.5rem] bg-gray-100;
   }
   table thead tr:nth-child(1) td:nth-child(2) {
-    @apply w-[30mm] h-[41mm];
+    @apply w-[30mm]  h-[41mm]
   }
   table.table-score {
     @apply text-sm;
@@ -54,6 +61,7 @@ table{
   .table-score tr th {
     @apply bg-gray-300 ;
   }
+
   .table-score tfoot tr:nth-child(3) td:nth-child(4) {
     @apply bg-gray-300;
   }

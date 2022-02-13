@@ -470,9 +470,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .workbook {
   margin: auto;
-  height: 145mm;
-  width: 210mm;
+  display: flex;
+  height: 210mm;
+  width: 290mm;
+  align-items: flex-start;
+  justify-content: center;
   overflow: hidden;
+}
+
+.table-detail {
+  height: 30%;
+}
+
+.table-score {
+  height: 70%;
 }
 
 table {
@@ -486,7 +497,6 @@ table :where(td, tr, th) {
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-  padding: 0.25rem;
 }
 
 table thead tr:not(:nth-child(1)) td:nth-child(even) {
@@ -496,7 +506,6 @@ table thead tr:not(:nth-child(1)) td:nth-child(even) {
 }
 
 table.table-detail {
-  height: 10mm;
   white-space: nowrap;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -505,7 +514,7 @@ table.table-detail {
 table thead tr:nth-child(1) td:nth-child(1) {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 table thead tr:nth-child(1) td:nth-child(2) {
@@ -560,20 +569,19 @@ html {
   font-size: 16px;
 }
 
-/* .wrapper> *::after {
-  content: "";
-  display: block;
-  border-top: 1px dotted black;
-  margin-top: 15px;
-  margin-bottom: 15px;
-} */
-
 table{
   table-layout: fixed;
   width: 100%;
 }
 
+@page{
+  margin:0
+}
+
 .workbook{
   -moz-column-break-after: always;
        break-after: always;
+}
+
+@media screen {
 }
